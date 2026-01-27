@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Waves Description</title>
+    <style>
+      :root{
+        --main-color: #667BC6;
+      }
+      *{
+        font-family: 'Glacial Indifference', sans-serif;
+        color:aliceblue;
+      }
+      body{
+        min-height:100vh;
+        width:100%;
+        display:flex;
+        margin:0;
+        padding:0;
+        flex-direction:column;
+        overflow: hidden
+      }
+      nav{
+        position: fixed;
+        top:0%;
+        width:100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index:4;
+        height:10%
+      }
+      nav a{
+        color:var(--offwhite);
+        padding: .5rem 2.5% .5rem 2.5%;
+        margin-block:.5rem;
+      }
+      a {text-decoration:none; transition:500ms; }
+      a:hover{
+        background: rgba(0,0,0,.25);
+      }
+      b{
+        color:inherit;
+      }
+      #bottom{
+        flex:1;
+        position:relative;
+      }
+      #user-box{
+        position:relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image:linear-gradient(#554bbb, var(--main-color));
+        width:18rem;
+        aspect-ratio:7/10;
+        transform: translate( 20% , -70%);
+        text-align: left;
+        box-shadow:0 0 60px #557755;
+        border: 3px solid azure;
+        border-radius: 10%;
+        z-index: 3;
+      }
+      #user-box p, #user-box input{
+        display: block;
+        font-weight:700;
+      }
+      #RankingCountry{
+        transition:450ms ease;
+        margin-bottom:20%;
+        text-align:center;
+        border:none;
+        border-radius: .5rem;
+        background:rgba(255, 255, 255, 0.80);
+        color:var(--main-color);
+        outline:none;
+        padding:.14rem;
+        font-weight:200;}
+      #RankingCountry:focus{
+        background:aliceblue;}
+      #RankingCountry::placeholder{
+        color:var(--main-color);
+        transition:.25s ease-in}
+      #RankingCountry:focus::placeholder{
+        transform:translateY(1rem);
+        color:transparent;
+      }
+      #user-box input[type="submit"]{
+        padding:.38rem;
+        background:rgba(255,255,255, 0.3);
+        border-radius:18%;
+        border:none;
+        font-weight:500;
+      }
+
+      .ranking-display{
+        position:relative;
+        width:100%;
+        height:.625rem;
+        margin-bottom:20px;
+        background:rgba(255, 255, 255, 0.25);
+        border-radius:8px;}
+      .ranking-display span{
+        position:relative;
+        display:block;
+        height:100%;
+        transition: 1s forwards;
+        background:white;
+        border-radius:8px;}
+      .ranking-display span div{
+        position:absolute;
+        left:100%;
+        top:100%;
+        transform:translateX(-50%);
+        padding:.25rem;
+        margin-top:.25rem;
+        background:white;
+        color:var(--main-color);
+        font-size:.6rem;
+        font-weight:700;
+        border-radius:.25rem;
+      }
+      .Long-txt{
+        color:black;
+        width:60%;
+        position: absolute;
+        right:0;
+        top:0;
+      }
+      #top{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        background-image:linear-gradient(#554bbb, #8182f8);
+        height:65vh;
+        flex-shrink:0;
+        z-index:2;
+        position:relative;
+      }
+      .content{
+        width:40%;
+        text-align: left;
+        z-index:2;
+      }
+      .description h1{
+        text-transform:uppercase;
+        font-weight:700;
+        font-size: 5.2rem;
+        line-height:1;
+        margin:0;
+        padding-bottom:0}
+      .description p{
+        margin:0;
+        font-size:1.25rem;
+      }
+      .slider {
+        position:absolute;
+        top:0;
+        height: 50%;
+        aspect-ratio:2/1;
+        right:2%;
+        overflow: hidden;
+      }
+      .slides{
+        position:relative;
+        display:flex;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s ease;
+      }
+      .slider button{
+        position:absolute;
+        right:0%;
+        bottom:0;
+        height:15%;
+        width:20%;
+        border-radius:1rem;
+        border:0;
+        color:black;
+        background:rgba(0,0,0,.15);
+        transition: .3s
+      }
+      .slider button:hover{
+        background:rgba(0,0,0,.25);
+      }
+      .slide {
+        border-radius:1rem;
+        align-content:center;
+        text-align:center;
+        width: calc(100% - 2rem);
+        aspect-ratio: 2/1;
+        color:black;
+        flex-shrink:0;
+        padding:.5rem;
+        margin:.5rem;
+        background-image:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0));
+      }
+      @media (max-width:800px) {
+        #top{justify-content: center;}
+        #user-box{transform: translate(-20%,-120%); opacity:.3; pointer-events: none; z-index:1}
+        .content{width:90%; text-align:center}
+        .slider{right:50%; transform: translateX(50%);}
+      }
+      video{
+        position:absolute;
+        height:inherit;
+        width:100%;
+        object-fit:cover;
+        z-index:0;
+        opacity:.4
+      }
+    </style>
+  </head>
+  <body>
+    <section id="top">
+      <video autoplay muted loop playsinline>
+        <source src="C:\Users\pc\Desktop\Portfolio\spaceview-bg.mp4" type="video/mp4">
+      </video>
+      <nav>
+        <a href="https://github.com/Le-Jireh" style="border-radius: 0 1rem 1rem 0;">
+          Le-Jireh
+          <img src="C:\Users\pc\Desktop\Portfolio\github-mark.svg" style="height:1rem; width:1rem;"></img>
+        </a>
+      </nav>
+      <div class="content">
+        <div class="description">
+          <h1>waves</h1>
+          <p>
+            Waves tries to address an issue faced by many tourists.
+            Oftentimes, travellers are forced to resort to social media to <b>decide</b> their <b>next destination</b>;
+            with this software, I aim to mitigate that problem.
+          </p>
+          <p style="position:absolute; bottom:2.5%"><b>Technologies:</b> Python, Flask, Pandas, Front-End, Requests, SQL, APIs</p>
+        </div>
+      </div>
+    </section>
+    <section id="bottom">
+      <div id="user-box">
+        <div id="RankingForm">
+          <input id="RankingCountry" type="text" placeholder="Visit our website">
+          <section id="rankDisplay">
+            <p>Landings:
+              <div class="ranking-display" style="--progress:67;"><span style="width:67%"><div>waves</div></span></div>
+            <p>Hotels:
+              <div class="ranking-display" style="--progress:42;"><span style="width:42%"><div>waves</div></span></div>
+            <p>Departures:
+              <div class="ranking-display" style="--progress:9;"><span style="width:9%"><div>waves</div></span></div>
+            <p>Expenditures:
+              <div class="ranking-display" style="--progress:89;"><span style="width:89%"><div>waves</div></span></div>
+          </section>
+        </div>
+      </div>
+      <div class="slider">
+        <div class="slides">
+          <div class="slide">
+            Regarding the backend the main programming language was <b>Python</b>, in particular the most used packages were <b>Pandas, Llama, Requests, Flask and os</b>.
+            For data storage we opted for <b>XLS or CSV</b> when the data concerned any individual aspect of a country, while we used <b>JSON</b> when there was no operational value to having a relational database.
+          </div>
+          <div class="slide">
+            The backend was structured following an <b>MVC</b> (Model–View–Controller) design pattern, which allowed for a clear separation of concerns.
+            Data processing, analysis, and ranking logic were encapsulated within the Model layer, while Flask routes acted as controllers.
+          </div>
+        </div>
+        <button onclick="toggleSlide(this)" value=0>Slide</button>
+      </div>
+    </section>
+  </body>
+</html>
+
+<script type="text/javascript">
+  function toggleSlide(btn) {
+    slider = document.querySelector('.slides')
+    direction = !parseInt(btn.value) * -100
+    slider.style.transform = `translateX(${direction}%)`
+    btn.value = direction
+  }
+
+  function animation(){
+    rankings = document.querySelectorAll(".ranking-display")
+    rankings.forEach((rank, i) => {
+      previousValue = parseFloat(getComputedStyle(rank).getPropertyValue("--progress"))
+      percentage = (previousValue * (i+1) * 2) % 100
+      span = rank.querySelector("span")
+      span.animate([
+        { width: `${previousValue}%`},
+        { width: `${percentage.toFixed(2)}%`}],
+        {duration:1500, fill:"forwards"})
+      rank.style.setProperty("--progress", percentage)
+    });
+  }
+  setInterval(animation, 3000)
+</script>
