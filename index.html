@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
+    <style>
+        *{
+        font-family: 'Glacial Indifference', sans-serif;}
+        body{
+            overflow-x: hidden;
+            height: 100svh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin:0;
+            background: rgb(238, 229,200);
+            animation: idle 5s linear infinite;
+        }
+        #content{
+            flex-wrap: wrap;
+            z-index:1;
+            height: 45%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #projects{
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            width:33%;
+            gap:.5rem
+        }
+        .pj{
+            background: rgba(0,0,0, .05);
+            border-radius:2rem;
+            padding:1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border:none;
+            font-size: 1rem;
+        }
+        .pj:hover{background: rgba(0,0,0, .095);}
+        .pj dt{
+            font-family: 'Alfa Slab One', serif;
+
+            font-weight: 100;
+            margin: 0;
+        }
+        #hero{
+            padding-bottom: 1rem;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #hero > *{ margin:0;}
+        #cv{
+            flex-shrink: 0;
+            height:125%;
+            aspect-ratio: .7;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        #cv p, #cv h3{
+            padding: .99rem;
+            width:100%;
+            margin:.1rem;
+            background: rgba(0,0,0, .095);
+            border-radius:1rem;
+        }
+        @keyframes idle {
+            0% {opacity:1}
+            80% {opacity:.6}
+            100% {opacity: 1;}
+        }
+        @keyframes cloud {
+            from{left:0; transform: translateX(-100%);}
+            to{left:100%;}
+        }
+        .design{
+            height: 100%;
+            width:100%;
+            position:absolute;
+        }
+        .design > div{position:relative; width:150px; animation: cloud 45s linear infinite;}
+        .design > div > div{background: rgb(224, 217,190);}
+        .base{
+            width:100%;
+            height: 50px;
+            border-radius: 5rem;
+        }
+        .round{
+            position: absolute;
+            top:-35%;
+            width:40%;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+        }
+        a {text-decoration:none; transition:500ms; }
+        a:hover{
+            background: rgba(0,0,0,.25);
+        }
+        nav{
+            position: fixed;
+            top:0%;
+            width:100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index:2;
+            height:10%
+        }
+        nav a{
+            padding: .5rem 2.5% .5rem 2.5%;
+            margin-block:.5rem;
+            color: black;
+      }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="https://github.com/Le-Jireh" style="border-radius: 0 1rem 1rem 0;">
+          Le-Jireh
+          <img src="C:\Users\pc\Desktop\Portfolio\github-mark.svg" style="height:1rem; width:1rem;"></img>
+        </a>
+    </nav>
+    <div class="design">
+        <div style="top:10%; animation-duration:120s; animation-direction:reverse">
+            <div class="base"></div>
+            <div class="round" style="width:35%"></div>
+            <div class="round" style="left:30%; top:-65%"></div>
+            <div class="round" style="left:65%; top:-25%; width:30%"></div>
+        </div>
+        <div style="top:10%;">
+            <div class="base"></div>
+            <div class="round" style="width:35%"></div>
+            <div class="round" style="left:30%; top:-65%"></div>
+            <div class="round" style="left:65%; top:-25%; width:30%"></div>
+        </div>
+        <div style="top:77%; animation-duration:55s; animation-direction:reverse">
+            <div class="base"></div>
+            <div class="round" style="width:35%"></div>
+            <div class="round" style="left:30%; top:-65%"></div>
+            <div class="round" style="left:65%; top:-25%; width:30%"></div>
+        </div>
+        <div style="top:45%; animation-duration:25s">
+            <div class="base"></div>
+            <div class="round" style="width:35%"></div>
+            <div class="round" style="left:30%; top:-65%"></div>
+            <div class="round" style="left:65%; top:-25%; width:30%"></div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="hero">
+            <h1 style='font-family: "Alfa Slab One", serif;'>ISMAEL JEAN SOLOMON</h1>
+            <h4>ismaelsolomon23@outlook.com | enquiries </h4>
+            <p>young, ambitious, determined</p>
+        </div>
+        <div id="projects">
+            <form action="fos-platters-description.html">
+                <button class="pj">
+                    <dt>Fo's platters</dt>
+                    <dl>This website encompasses the Fo's platters experience <br>
+                    by providing a simple and inclusive way to view and purchase Fo's snacks and services</dl>
+                </button>
+            </form>
+            <form action="waves-description.html">
+                <button class="pj">
+                    <dt>Waves</dt>
+                    <dl>This passion project wishes to assist tourists <br>
+                    by providing reliable insights on their new desitnations</dl>
+                </button>
+            </form>
+        </div>
+        <div id="cv">
+            
+            <h3 style="font-family: 'Alfa Slab One', serif; font-weight:lighter; ">
+                Ismael Solomon
+            </h3>
+            <p style="width:auto"><b>Location:</b> Ireland (willing to relocate within EU)</p>
+            <p><b>Education:</b> <br>
+                -Bachelor in <i>Business Administration</i> (in progress) <br>
+                -<i>CS50</i> <br>
+                -<i>AWS CLF-C02</i></p>
+            <p style="width:auto"><b>Skills:</b><br>
+                -Data and Business Analysis <br>
+                -Software Development <br>
+                -Web Development <br>
+                -Cloud Computing <br>
+                -Python, .NET, C, SQL</p>
+        </div>
+    </div>
+</body>
+</html>
