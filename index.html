@@ -44,9 +44,8 @@
             font-size: 1rem;
         }
         .pj:hover{background: rgba(0,0,0, .095);}
-        .pj dt{
+        .pj h4{
             font-family: 'Alfa Slab One', serif;
-
             font-weight: 100;
             margin: 0;
         }
@@ -119,7 +118,26 @@
             padding: .5rem 2.5% .5rem 2.5%;
             margin-block:.5rem;
             color: black;
-      }
+        }
+        @media (max-width: 900px) {
+            #content {
+                flex-wrap: wrap;
+                flex-direction: row;
+                align-items: center;                
+                min-height: auto;
+                gap: 2rem;
+            }
+        
+            #projects,
+            #cv {
+                width: 90%;
+                height: auto;
+            }
+            
+            #hero {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -162,18 +180,18 @@
             <p>young, ambitious, determined</p>
         </div>
         <div id="projects">
-            <form action="Portfolio/fos-platters-description.html">
+             <form action="Portfolio/fos-platters-description.html">
                 <button class="pj">
-                    <dt>Fo's platters</dt>
-                    <dl>This website encompasses the Fo's platters experience <br>
-                    by providing a simple and inclusive way to view and purchase Fo's snacks and services</dl>
+                    <h4>Fo's platters</h4>
+                    <p>This website encompasses the Fo's platters experience <br>
+                    by providing a simple and inclusive way to view and purchase Fo's snacks and services</p>
                 </button>
             </form>
             <form action="Portfolio/waves-description.html">
                 <button class="pj">
-                    <dt>Waves</dt>
-                    <dl>This passion project wishes to assist tourists <br>
-                    by providing reliable insights on their new desitnations</dl>
+                    <h4>Waves</h4>
+                    <p>This passion project wishes to assist tourists <br>
+                    by providing reliable insights on their new desitnations<p>
                 </button>
             </form>
         </div>
@@ -198,4 +216,5 @@
 </body>
 
 </html>
+
 
